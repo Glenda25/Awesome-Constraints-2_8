@@ -23,15 +23,21 @@ class ViewController: UIViewController {
     @IBAction func showMessage(_ sender: UIButton) {
         print("showMessage button pushed")
         
-        if messageLabel.text == "" {
-            messageLabel.text = "Diving is awesome"
+        // loop that starts and ends with a blank message
+        
+        //define constants
+        let image1Message = "Diving is awesome"
+        let image2Message = "A view under the boat"
+        
+        if messageLabel.text == "...and we start again" {
+            messageLabel.text = image1Message
             imageView.image = UIImage(named: "image1")
         }else if messageLabel.text == "Diving is awesome" {
-            messageLabel.text = "A view under the boat"
+            messageLabel.text = image2Message
             imageView.image = UIImage(named: "image2")
         }else{
-            messageLabel.text = ""
-            imageView.image = UIImage(named: "image1")
+            messageLabel.text = "...and we start again"
+            imageView.image = UIImage(named: "") // workes with warning
         }
     }
     
