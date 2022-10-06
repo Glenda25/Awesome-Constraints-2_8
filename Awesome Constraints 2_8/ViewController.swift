@@ -22,8 +22,17 @@ class ViewController: UIViewController {
 
     @IBAction func showMessage(_ sender: UIButton) {
         print("showMessage button pushed")
-        messageLabel.text = "Diving is awesome"
-        imageView.image = UIImage(named: "image1")
+        
+        if messageLabel.text == "" {
+            messageLabel.text = "Diving is awesome"
+            imageView.image = UIImage(named: "image1")
+        }else if messageLabel.text == "Diving is awesome" {
+            messageLabel.text = "A view under the boat"
+            imageView.image = UIImage(named: "image2")
+        }else{
+            messageLabel.text = ""
+            imageView.image = UIImage(named: "image1")
+        }
     }
     
     
